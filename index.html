@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Women's Day</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+overflow:hidden;
+text-align:center;
+color:white;
+}
+
+.card{
+background:rgba(255,255,255,0.2);
+padding:40px;
+border-radius:20px;
+width:320px;
+backdrop-filter:blur(10px);
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid white;
+margin-bottom:15px;
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:white;
+color:#ff4b6e;
+font-weight:bold;
+cursor:pointer;
+}
+
+.heart{
+position:absolute;
+color:white;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh)}
+100%{transform:translateY(-10vh)}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="https://drive.google.com/uc?export=view&id=1eoCybZjcl7J6DcJh9G69oTmaFGHk_ZYo">
+
+<h2>Happy Women's Day</h2>
+
+<p id="msg">
+You are strong, inspiring, and truly amazing.
+</p>
+
+<button onclick="show()">Click for Surprise</button>
+
+<p id="extra"></p>
+
+<button onclick="music()">Play Music</button>
+
+<audio id="song">
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_8c1a5a.mp3">
+</audio>
+
+</div>
+
+<script>
+
+function show(){
+document.getElementById("extra").innerHTML=
+"You deserve appreciation every single day ❤️";
+}
+
+function music(){
+document.getElementById("song").play();
+}
+
+function heart(){
+
+let h=document.createElement("div");
+h.innerHTML="❤️";
+h.className="heart";
+
+h.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{h.remove()},6000)
+
+}
+
+setInterval(heart,400)
+
+</script>
+
+</body>
+</html>
